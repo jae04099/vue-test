@@ -1,26 +1,12 @@
 <template>
   <div class="text-center">
-    <!-- <v-btn
-      dark
-      color="red darken-2"
-      @click="snackbar = true"
-    >
-      Open Snackbar
-    </v-btn> -->
+    <v-btn dark @click="snackbar = true"> Open Snackbar </v-btn>
 
-    <v-snackbar
-      v-model="snackbar"
-      :multi-line="multiLine"
-    >
+    <v-snackbar v-model="snackbar" :multi-line="multiLine" :timeout="timeout">
       {{ text }}
 
       <template v-slot:action="{ attrs }">
-        <v-btn
-          color="red"
-          text
-          v-bind="attrs"
-          @click="snackbar = false"
-        >
+        <v-btn color="red" text v-bind="attrs" @click="snackbar = false">
           Close
         </v-btn>
       </template>
@@ -28,11 +14,12 @@
   </div>
 </template>
 <script>
-  export default {
-    data: () => ({
-      multiLine: true,
-      snackbar: false,
-      text: `바탕화면이 아닌 이미지를 누르세요.`,
-    }),
-  }
+export default {
+  data: () => ({
+    multiLine: true,
+    snackbar: false,
+    text: `바탕화면이 아닌 이미지를 누르세요.`,
+    timeout: 3000,
+  }),
+};
 </script>

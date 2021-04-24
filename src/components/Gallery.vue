@@ -9,8 +9,8 @@
         @click="index = imageIndex"
         :style="{
           backgroundImage: 'url(' + image + ')',
-          width: '300px',
-          height: '200px',
+          width: '110px',
+          height: '130px',
         }"
       ></div>
     </div>
@@ -25,12 +25,12 @@ export default {
   data: function () {
     return {
       images: [
-        "https://picsum.photos/id/1/200",
-        "https://picsum.photos/id/20/200",
-        "https://picsum.photos/id/30/200",
-        "https://picsum.photos/id/50/200",
-        "https://picsum.photos/id/55/200",
-        "https://picsum.photos/id/60/200",
+        "https://picsum.photos/id/1/200/300",
+        "https://picsum.photos/id/20/200/300",
+        "https://picsum.photos/id/310/200/300",
+        "https://picsum.photos/id/520/200/300",
+        "https://picsum.photos/id/55/200/300",
+        "https://picsum.photos/id/60/200/300",
       ],
       index: null,
     };
@@ -52,8 +52,8 @@ export default {
 }
 .image {
   background-size: cover;
-  flex-basis: calc(25% - 10px);
-  margin: 0.5rem;
+  flex-basis: calc(30%);
+  margin: 0.7rem;
   cursor: pointer;
 }
 </style>
