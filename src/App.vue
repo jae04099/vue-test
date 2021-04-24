@@ -1,18 +1,30 @@
 <template>
-<v-app>
-      <v-container fluid style="padding: 0;">
-          <v-tabs v-model="tab" align-with-title>
-            <v-tab v-for="(item, index) in items" :key="index">
-              {{ item.tab }}
-            </v-tab>
-          </v-tabs>
-          <v-tabs-items v-model="tab">
-            <v-tab-item v-for="(item, index) in items" :key="index">
-              <component v-bind:is="item.content"></component>
-            </v-tab-item>
-          </v-tabs-items>
-      </v-container>
-</v-app>
+  <v-app>
+    <v-container fluid style="padding: 0">
+      <v-tabs v-model="tab" align-with-title>
+        <v-tab
+          v-on:click="clickedTab"
+          v-for="(item, index) in this.$store.state.tabs"
+          :key="index"
+          :tabindex="index"
+        >
+          {{ item.tabKind }}
+        </v-tab>
+      </v-tabs>
+      <v-tabs-items v-model="tab">
+        <v-tab-item transition='none'>
+          <keep-alive>
+            <component v-bind:is="this.$store.state.currentPage" ></component>
+          </keep-alive>
+        </v-tab-item>
+        <v-tab-item transition='none'>
+          <keep-alive>
+            <component v-bind:is="this.$store.state.currentPage" ></component>
+          </keep-alive>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
@@ -22,6 +34,13 @@ export default {
   components: {
     FirstTabCont,
     SecTabCont,
+  },
+  methods: {
+    clickedTab: function (e) {
+      this.$store.commit("setCurrentPage", {
+        targetIndex: e.target.tabIndex,
+      });
+    },
   },
   data() {
     return {
@@ -36,9 +55,7 @@ export default {
 </script>
 
 <style scoped>
-
 section {
   height: 100%;
 }
-
 </style>
