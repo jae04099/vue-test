@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-import vuetify from '@/plugins/vuetify'
-import VueGallery from 'vue-gallery'
+import Vue from 'vue';
+import App from './App.vue';
+import vuetify from '@/plugins/vuetify';
+import VueGallery from 'vue-gallery';
 import { store } from './store/store';
 
 

@@ -4,9 +4,10 @@
 
 <script>
 import TabComp from "./components/Tab";
+
 export default {
   components: {
-    TabComp,
+    TabComp
   },
 };
 </script>
