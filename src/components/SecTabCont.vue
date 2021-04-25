@@ -23,14 +23,6 @@ export default {
     text: `바탕화면이 아닌 이미지를 누르세요.`,
     timeout: 3000,
   }),
-  methods: {
-    snackbarHandler: function () {
-      console.log(this.snackbar);
-    },
-  },
-  updated: function () {
-    console.log(this.snackbar);
-  },
 };
 </script>
 
