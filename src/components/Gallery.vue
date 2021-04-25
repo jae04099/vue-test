@@ -1,10 +1,14 @@
 <template>
   <div>
-    <gallery :images="images" :index="index" @close="index = null"></gallery>
+    <gallery
+      :images="this.$store.state.gallery.images"
+      :index="index"
+      @close="index = null"
+    ></gallery>
     <div class="imgWrap">
       <div
         class="image"
-        v-for="(image, imageIndex) in images"
+        v-for="(image, imageIndex) in this.$store.state.gallery.images"
         :key="imageIndex"
         @click="index = imageIndex"
         :style="{
@@ -24,18 +28,9 @@ export default {
   name: "SecTabCont",
   data: function () {
     return {
-      images: [
-        "https://picsum.photos/id/1/200/300",
-        "https://picsum.photos/id/20/200/300",
-        "https://picsum.photos/id/310/200/300",
-        "https://picsum.photos/id/520/200/300",
-        "https://picsum.photos/id/55/200/300",
-        "https://picsum.photos/id/60/200/300",
-      ],
       index: null,
     };
   },
-
   components: {
     gallery: VueGallery,
   },

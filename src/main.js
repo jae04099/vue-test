@@ -4,7 +4,6 @@ import vuetify from '@/plugins/vuetify';
 import VueGallery from 'vue-gallery';
 import { store } from './store/store';
 
-
 Vue.config.productionTip = false
 
 new Vue({

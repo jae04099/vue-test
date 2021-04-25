@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-container fluid style="padding: 0">
+    <v-container class="pa-0">
       <v-tabs v-model="tab" align-with-title>
         <v-tab
           v-on:click="clickedTab"
@@ -11,9 +11,9 @@
           {{ item.tabKind }}
         </v-tab>
       </v-tabs>
-          <keep-alive>
-            <component v-bind:is="this.$store.state.currentPage"></component>
-          </keep-alive>
+      <keep-alive>
+        <component v-bind:is="this.$store.state.currentPage"></component>
+      </keep-alive>
     </v-container>
   </v-app>
 </template>
@@ -25,17 +25,17 @@ import SecTabCont from "./SecTabCont";
 export default {
   components: {
     FirstTabCont,
-    SecTabCont,
+    SecTabCont
   },
   data() {
     return {
-      tab: null,
+      tab: null
     };
   },
   methods: {
     clickedTab: function (e) {
       this.$store.commit("setCurrentPage", {
-        targetIndex: e.target.tabIndex,
+        targetIndex: e.target.tabIndex
       });
     },
   },
