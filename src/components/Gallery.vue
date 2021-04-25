@@ -1,3 +1,6 @@
+
+// 갤러리 컴포넌트
+
 <template>
   <div>
     <gallery

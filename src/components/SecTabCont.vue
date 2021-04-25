@@ -1,3 +1,6 @@
+
+// 메뉴 2의 콘텐츠. 
+
 <template>
   <div class="contentWrap" @click.self="snackbar = true">
     <VueGallery />

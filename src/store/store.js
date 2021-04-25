@@ -23,6 +23,7 @@ export const store = new Vuex.Store({
         }
     },
     mutations: {
+        // 타겟 인덱스를 받아 컴포넌트를 변이합니다.
         setCurrentPage(state, payload) {
             payload.targetIndex === 0 ? (state.currentPage = "FirstTabCont") : (state.currentPage = "SecTabCont")
         }

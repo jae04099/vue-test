@@ -1,3 +1,6 @@
+
+// 탭 메뉴와 탭 선택에 따라 store에서 컴포넌트를 렌더링 합니다.
+
 <template>
   <v-app>
     <v-container class="pa-0">
@@ -25,17 +28,17 @@ import SecTabCont from "./SecTabCont";
 export default {
   components: {
     FirstTabCont,
-    SecTabCont
+    SecTabCont,
   },
   data() {
     return {
-      tab: null
+      tab: null,
     };
   },
   methods: {
     clickedTab: function (e) {
       this.$store.commit("setCurrentPage", {
-        targetIndex: e.target.tabIndex
+        targetIndex: e.target.tabIndex,
       });
     },
   },
@@ -45,5 +48,7 @@ export default {
 <style scoped>
 section {
   height: 100%;
+  transition: all 0.3s ease-out;
 }
+
 </style>
